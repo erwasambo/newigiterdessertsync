@@ -1,0 +1,23 @@
+{
+  "name": "africachronicles",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "homepage": "http://africachronicles.com/",
+  "authors": [
+    "erick wasambo <erickwasambo@gmail.com>"
+  ],
+  "dependencies": {
+   
+    "bootstrap": null,
+    "gmaps":null,
+    "jquery-ui":null,
+    "jquery.validation":null
+  }
+}
