@@ -124,6 +124,7 @@ class Example extends REST_Controller {
 
 	//Save to file log as a text file
 	$this->load->helper('file');
+	$this->load->helper('url');
 	$data = 'Some file data'.$message['byte_array'];
 	$email = $message['email'];
 	$username = preg_replace('/@.*?$/', '', $email);
