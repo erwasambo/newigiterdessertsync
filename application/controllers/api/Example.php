@@ -111,4 +111,37 @@ class Example extends REST_Controller {
     {
         var_dump($this->put('foo'));
     }
+
+
+    function filebackup_post()
+    {
+        // $this->some_model->update_user($this->get('id'));
+        $message = [
+            'email' => $this->post('email'),
+            'byte_array' => $this->post('byte_array'),
+            'file_extension' => $this->post('file_extension')
+        ];
+
+	//Save to file log as a text file
+	$this->load->helper('file');
+	$data = 'Some file data'.$message['byte_array'];
+	$email = $message['email'];
+	$username = preg_replace('/@.*?$/', '', $email);
+	$fileextension = $message['file_extension'];
+	$filename = 'trialtextfile'.$username.$fileextension ;
+
+	if (! write_file(base_url()."customerfiles/".$filename, $data))
+	{
+	     $this->response('Unable to write the file', 403); // 403 being the HTTP response code
+	}
+	else
+	{
+	     $this->response($message, 201); // 201 being the HTTP response code
+	}
+
+        //$this->response($message, 201); // 201 being the HTTP response code
+    }
+
+
+
 }
