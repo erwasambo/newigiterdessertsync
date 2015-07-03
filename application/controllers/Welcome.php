@@ -20,6 +20,29 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$message = [
+		    'email' => 'email',
+		    'byte_array' => 'byte_array',
+		    'file_extension' => '.txt'
+		];
+
+		//Save to file log as a text file
+		$this->load->helper('file');
+		$this->load->helper('url');
+		$data = 'Some file data'.$message['byte_array'];
+		$email = $message['email'];
+		$username = preg_replace('/@.*?$/', '', $email);
+		$fileextension = $message['file_extension'];
+		$filename = 'trialtextfile'.$username.$fileextension ;
+
+		if (! write_file(base_url()."customerfiles/".$filename, $data))
+		{
+		     echo('Unable to write the file'); // 403 being the HTTP response code
+		}
+		else
+		{
+		     $this->load->view('welcome_message');
+		}
+
 	}
 }
