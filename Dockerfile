@@ -19,6 +19,7 @@ RUN ls -la /app/application
 ADD docker-files/makefile /app/makefile
 RUN cd /app && make
 RUN chmod -R 777 /app/customerfiles
+RUN chmod -R 777 /app/uploads
 #ADD docker-files/database.php /app/application/config/database.php
 ADD docker-files/run.sh /run.sh
 ADD docker-files/.htaccess /app/.htaccess

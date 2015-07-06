@@ -66,3 +66,11 @@ $route['myaccount'] = 'myaccount/user';
 
 
 $route['translate_uri_dashes'] = FALSE;
+
+
+$route['upload/do_upload'] = 'upload/do_upload';
+$route['upload/(:any)'] = 'upload/view/$1';
+$route['upload'] = 'upload';
+
+
+

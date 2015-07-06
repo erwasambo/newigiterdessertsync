@@ -20,6 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
+/*
 		$message = [
 		    'email' => 'email',
 		    'byte_array' => 'byte_array',
@@ -42,7 +43,8 @@ class Welcome extends CI_Controller {
 		else
 		{
 		     $this->load->view('welcome_message');
-		}
+		}*/
+		 $this->load->view('welcome_message');
 
 	}
 }
