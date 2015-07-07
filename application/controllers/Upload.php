@@ -13,7 +13,7 @@ class Upload extends CI_Controller {
        
         // Load the form
         //$this->load->view('templates/header');
-        $this->load->view('upload/upload_form', array('error' => ' ' ));
+        $this->load->view('upload', array('error' => ' ' ));
         //$this->load->view('templates/footer');
        
     }
